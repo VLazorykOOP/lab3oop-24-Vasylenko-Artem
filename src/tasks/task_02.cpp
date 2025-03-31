@@ -19,4 +19,30 @@ using namespace std;
 
 void task_02()
 {
+	Vector v1;
+	Vector v2(5);
+	Vector v3(5, 2);
+
+	cout << "v1: ";
+	v1.print();
+	cout << "v2: ";
+	v2.print();
+	cout << "v3: ";
+	v3.print();
+
+	v2.set(2, 10);
+	v2.print();
+	cout << "v2[2]: " << v2.get(2) << endl;
+
+	cout << "v2 :";
+	v2.print();
+	cout << "v3 :";
+	v3.print();
+	Vector v4 = v2 + v3;
+	v4.print();
+
+	Vector v5 = v3 * 3;
+	v5.print();
+
+	cout << "Objects count: " << Vector::getObjectCount() << endl;
 }
