@@ -2,6 +2,7 @@
 
 #include "console.h"
 #include "taskManager.h"
+#include "matrix.h"
 
 // Створити клас матриця.Даний клас містить вказівник на int, розміри рядків і стовпців та стан помилки.У класі визначити o конструктор без параметрів(виділяє місце для матриці 3 на 3 елемента та інінціалізує його в нуль);
 // - конструктор з одним параметром – розмір n матриці(виділяє місце n на n та інінціалізує матрицю значенням нуль);
@@ -17,4 +18,11 @@ using namespace std;
 
 void task_03()
 {
+	Matrix m1(3, 3, 5);
+	m1.print();
+	Matrix m2(3, 3, 2);
+	m2.print();
+	Matrix sum = m1 + m2;
+	sum.print();
+	std::cout << "Number of objects: " << Matrix::getObjectCount() << std::endl;
 }
