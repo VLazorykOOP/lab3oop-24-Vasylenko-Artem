@@ -1,9 +1,10 @@
+#pragma once
+
 #include <iostream>
 #include <iomanip>
 
 #include "console.h"
 #include "taskManager.h"
-#include "date.h"
 
 // Створити клас типу - дата з полями : день(1 - 31), місяць(1 - 12), рік(ціле число).У класі визначити
 // - конструктори(не менше двох);
@@ -11,27 +12,39 @@
 // - функції - члени одержання дня, місяця та року;
 // - дві функції - члени друку за шаблоном : “5 січня 2019 року” і “05.01.2019”. Написати програму тестування всіх можливостей цього класу.
 
-void task_01()
+using namespace std;
+
+typedef struct Month
 {
-	Date date1;
-	date1.printFullDate();
-	date1.printShortDate();
-	newLine();
+	short number;
+	string name;
+} Month;
 
-	Date date2(5, 1, 2019);
-	date2.printFullDate();
-	date2.printShortDate();
-	newLine();
+class Date
+{
+private:
+	int day;
+	int month;
+	int year;
 
-	date2.setDay(15);
-	date2.setMonth(8);
-	date2.setYear(2025);
-	date2.printFullDate();
-	date2.printShortDate();
-	newLine();
+	bool isLeapYear(int y);
 
-	// Test
-	date2.setDay(32);
-	date2.setMonth(13);
-	date2.setYear(-2023);
-}
+	bool isValidDay(int d);
+	bool isValidMonth(int m);
+	bool isValidYear(int y);
+
+public:
+	Date() : day(1), month(1), year(2000) {}
+	Date(int d, int m, int y);
+
+	void setDay(int d);
+	void setMonth(int m);
+	void setYear(int y);
+
+	int getDay() const;
+	int getMonth() const;
+	int getYear() const;
+
+	void printFullDate() const;
+	void printShortDate() const;
+};
