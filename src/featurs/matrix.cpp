@@ -2,8 +2,6 @@
 
 using namespace std;
 
-#include <stdexcept>
-
 Matrix::Matrix() : rows(3), cols(3), error_code(0)
 {
 	allocateAndInitialize(3, 3, 0);
@@ -68,7 +66,7 @@ int Matrix::object_count = 0;
 
 void Matrix::allocateAndInitialize(int n, int m, int value)
 {
-	data = new (std::nothrow) int[n * m];
+	data = new (nothrow) int[n * m];
 	if (!data)
 	{
 		error_code = 2;
@@ -80,7 +78,7 @@ void Matrix::allocateAndInitialize(int n, int m, int value)
 
 void Matrix::allocateAndCopy(const Matrix &other)
 {
-	data = new (std::nothrow) int[rows * cols];
+	data = new (nothrow) int[rows * cols];
 	if (!data)
 	{
 		error_code = 2;
@@ -97,8 +95,8 @@ void Matrix::print() const
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
-			std::cout << getElement(i, j) << " ";
-		std::cout << std::endl;
+			cout << getElement(i, j) << " ";
+		cout << endl;
 	}
 }
 
@@ -147,6 +145,30 @@ bool Matrix::operator==(const Matrix &other) const
 
 	for (int i = 0; i < rows * cols; i++)
 		if (data[i] != other.data[i])
+			return false;
+
+	return true;
+}
+
+bool Matrix::operator<(const Matrix &other) const
+{
+	if (rows > other.rows || cols > other.cols)
+		return false;
+
+	for (int i = 0; i < rows * cols; i++)
+		if (data[i] > other.data[i])
+			return false;
+
+	return true;
+}
+
+bool Matrix::operator>(const Matrix &other) const
+{
+	if (rows < other.rows || cols < other.cols)
+		return false;
+
+	for (int i = 0; i < rows * cols; i++)
+		if (data[i] < other.data[i])
 			return false;
 
 	return true;

@@ -25,24 +25,34 @@ void task_02()
 
 	cout << "v1: ";
 	v1.print();
+
 	cout << "v2: ";
 	v2.print();
+
 	cout << "v3: ";
 	v3.print();
 
+	newLine();
+
+	cout << "v2: ";
 	v2.set(2, 10);
 	v2.print();
-	cout << "v2[2]: " << v2.get(2) << endl;
+	newLine();
 
+	cout << "v2[2]: " << v2.get(2) << endl;
 	cout << "v2 :";
 	v2.print();
-	cout << "v3 :";
-	v3.print();
+	newLine();
+
+	cout << "v4 = v2 + v3: ";
 	Vector v4 = v2 + v3;
 	v4.print();
+	newLine();
 
+	cout << "v5 = v3 * 3: ";
 	Vector v5 = v3 * 3;
 	v5.print();
+	newLine();
 
 	cout << "Objects count: " << Vector::getObjectCount() << endl;
 }

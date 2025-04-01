@@ -37,6 +37,8 @@ public:
 
 	bool operator==(const Matrix &other) const;
 	bool operator!=(const Matrix &other) const;
+	bool operator<(const Matrix &other) const;
+	bool operator>(const Matrix &other) const;
 
 	void print() const;
 

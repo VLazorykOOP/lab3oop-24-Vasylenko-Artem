@@ -20,9 +20,15 @@ void task_03()
 {
 	Matrix m1(3, 3, 5);
 	m1.print();
+	newLine();
+
 	Matrix m2(3, 3, 2);
 	m2.print();
+	newLine();
+
 	Matrix sum = m1 + m2;
 	sum.print();
-	std::cout << "Number of objects: " << Matrix::getObjectCount() << std::endl;
+	newLine();
+
+	cout << "Number of objects: " << Matrix::getObjectCount() << endl;
 }
