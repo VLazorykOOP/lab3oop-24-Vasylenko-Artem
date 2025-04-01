@@ -18,6 +18,10 @@ using namespace std;
 
 void task_03()
 {
+	Matrix m;
+	m.print();
+	newLine();
+
 	Matrix m1(3, 3, 5);
 	m1.print();
 	newLine();
@@ -30,5 +34,20 @@ void task_03()
 	sum.print();
 	newLine();
 
+	Matrix m3(4, 3, 1);
+	m2.print();
+	newLine();
+
+	Matrix m4(4, 4, 2);
+	m4.print();
+	newLine();
+
+	cout << "m3 == m4: " << ((m3 == m4) ? "true" : "false") << endl;
+	cout << "m3 != m4: " << ((m3 != m4) ? "true" : "false") << endl;
+	cout << "m3 > m4: " << ((m3 > m4) ? "true" : "false") << endl;
+	cout << "m3 < m4: " << ((m3 < m4) ? "true" : "false") << endl;
+	newLine();
+
 	cout << "Number of objects: " << Matrix::getObjectCount() << endl;
+	newLine();
 }

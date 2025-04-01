@@ -54,5 +54,20 @@ void task_02()
 	v5.print();
 	newLine();
 
+	cout << "v2: ";
+	v2.print();
+	cout << "v3: ";
+	v3.print();
+	newLine();
+
+	cout << "v2 == v3: " << endl;
+	cout << ((v2 == v3) ? "true" : "false") << endl;
+	newLine();
+
+	cout << "v2 != v3: " << endl;
+	cout << ((v2 != v3) ? "true" : "false") << endl;
+	newLine();
+
 	cout << "Objects count: " << Vector::getObjectCount() << endl;
+	newLine();
 }
