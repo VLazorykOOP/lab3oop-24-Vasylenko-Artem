@@ -10,7 +10,7 @@ class Vector
 private:
 	int *data;
 	int size;
-	int state; // 0 - good, 1 - Error
+	int state;
 	static int objectCount;
 
 public:

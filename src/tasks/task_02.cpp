@@ -46,6 +46,7 @@ void task_02()
 
 	cout << "v4 = v2 + v3: ";
 	Vector v4 = v2 + v3;
+	v4 = v2;
 	v4.print();
 	newLine();
 
