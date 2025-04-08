@@ -4,6 +4,8 @@ using namespace std;
 
 Month months[12] = {{1, "January"}, {2, "February"}, {3, "March"}, {4, "April"}, {5, "May"}, {6, "June"}, {7, "July"}, {8, "August"}, {9, "September"}, {10, "October"}, {11, "November"}, {12, "December"}};
 
+Date::Date() : day(1), month(1), year(2000) {}
+
 Date::Date(int d, int m, int y)
 {
 	if (isValidDay(d) && isValidMonth(m) && isValidYear(y))
